@@ -1,0 +1,63 @@
+h1 {color:brown;
+    position: relative;
+    animation-name: mymove;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    border: 10px solid;
+  border-image: url(grass.jpg) 20% stretch;}
+.header{background-color: blue}
+@keyframes mymove {
+    0% {background-color: red;}
+    14.2%{background-color: orange;}
+    28.4%{background-color: yellow;}
+    42.6%{background-color: green;}
+    56.8%{background-color:blue;}
+    71%{background-color: indigo;}
+    100%{background-color: violet;}
+}
+.games {display: flex;
+  border: 10px solid;
+justify-content: space-evenly;
+flex-wrap: wrap;
+border-image: url(grass.jpg) 20% stretch;}
+.item p{text-align: center;}
+.subtitle p{text-align: center;}
+.flip {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+}
+
+.item{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip:hover .item {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+  background-color: #bbb;
+  color: black;
+}
+
+.back {
+  background-color: #555;
+  color: white;
+  transform: rotateY(180deg);
+}
